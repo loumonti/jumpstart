@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://qoqlqyifuqrc"]
 
+[ext_resource type="Script" uid="uid://drr4ior8aoolq" path="res://main.gd" id="1_7mycd"]
 [ext_resource type="Script" uid="uid://csyn7ls0l8m01" path="res://character_body_2d.gd" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://b8863bif5sou8" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://tc2srknbhg1s" path="res://turtleassett.png" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://cda3uqa8rgxsi" path="res://TinyTropicalTiles_Tileset.png" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dk67fbt5rkv4t" path="res://background.jpg" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://3dfgcvd6avvr" path="res://killzone.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bxibokqhx0cwb" path="res://coconuts.tscn" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(134, 137)
+size = Vector2(151, 111)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lquwl"]
 texture = ExtResource("3_1bvp3")
@@ -76,23 +77,23 @@ texture = ExtResource("3_1bvp3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lquwl")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
-size = Vector2(2066, 98)
-
 [node name="Node" type="Node" unique_id=100327244]
+script = ExtResource("1_7mycd")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=246375836]
+[node name="player" type="CharacterBody2D" parent="." unique_id=246375836]
 script = ExtResource("1_h2yge")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1716678356]
-position = Vector2(220, 233)
-texture = ExtResource("1_ig7tw")
+[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=1716678356]
+z_index = 4
+position = Vector2(223.50002, 264)
+scale = Vector2(5.9687514, 5.9259257)
+texture = ExtResource("2_1bvp3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1300666336]
-position = Vector2(220, 233.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1300666336]
+position = Vector2(243.5, 246.5)
 shape = SubResource("RectangleShape2D_0xm2m")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=622812773]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=622812773]
 position = Vector2(219, 218)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
@@ -104,12 +105,28 @@ tile_set = SubResource("TileSet_7mycd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1198115375]
 z_index = -5
-position = Vector2(2478, -369)
+position = Vector2(2416, -376)
 scale = Vector2(2.9953127, 2.4989586)
 texture = ExtResource("4_1bvp3")
 
-[node name="killzone" parent="." unique_id=1061482180 instance=ExtResource("5_lquwl")]
+[node name="Node2D" type="Node2D" parent="." unique_id=340264860]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1677481599]
-position = Vector2(1366, 425)
-shape = SubResource("RectangleShape2D_7mycd")
+[node name="collectibles" type="TileMapLayer" parent="Node2D" unique_id=1797853706]
+
+[node name="coconuts" parent="." unique_id=1268443697 instance=ExtResource("5_lquwl")]
+position = Vector2(608, 264)
+scale = Vector2(3, 3)
+collision_layer = 3
+collision_mask = 3
+
+[node name="coconuts2" parent="." unique_id=1921462617 instance=ExtResource("5_lquwl")]
+position = Vector2(1232, 72)
+scale = Vector2(3, 3)
+
+[node name="coconuts3" parent="." unique_id=474525913 instance=ExtResource("5_lquwl")]
+position = Vector2(2136, 120)
+scale = Vector2(3, 3)
+
+[node name="coconuts4" parent="." unique_id=800571351 instance=ExtResource("5_lquwl")]
+position = Vector2(2640, 312)
+scale = Vector2(3, 3)
