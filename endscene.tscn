@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://jkavuqjs2spi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wuy31"]
+font_size = 150
+shadow_color = Color(0.44583428, 0.4839005, 0.20575833, 0)
+
+[node name="Panel" type="Panel" unique_id=1679629601]
+offset_right = 1148.0
+offset_bottom = 654.0
+
+[node name="Label" type="Label" parent="." unique_id=349326475]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.5
+offset_top = -206.5
+offset_right = 328.5
+offset_bottom = 206.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You win!!
+Yayyyyy"
+label_settings = SubResource("LabelSettings_wuy31")
+horizontal_alignment = 1

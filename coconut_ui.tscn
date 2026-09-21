@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://blukk824lm054"]
+
+[ext_resource type="Script" uid="uid://cwj5srvep5ocs" path="res://scripts/coconut_ui.gd" id="1_yjl4e"]
+[ext_resource type="Texture2D" uid="uid://fbppkwi6ylwo" path="res://TinyTropicalTiles44.png" id="2_3ptl8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_567jp"]
+font_size = 35
+
+[node name="Coconut UI" type="Panel" unique_id=953891875]
+offset_right = 98.0
+offset_bottom = 51.0
+script = ExtResource("1_yjl4e")
+
+[node name="Label" type="Label" parent="." unique_id=2004199594]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -24.5
+offset_right = 43.0
+offset_bottom = 24.5
+grow_vertical = 2
+text = "99"
+label_settings = SubResource("LabelSettings_567jp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2085336322]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -20.0
+offset_right = -7.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_3ptl8")
