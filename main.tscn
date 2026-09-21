@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dk67fbt5rkv4t" path="res://background.jpg" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bxibokqhx0cwb" path="res://coconuts.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://blukk824lm054" path="res://coconut_ui.tscn" id="7_272bh"]
-[ext_resource type="PackedScene" uid="uid://3dfgcvd6avvr" path="res://killzone.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://keo50tprih8" path="res://endzone.gd" id="8_kek77"]
+[ext_resource type="Script" uid="uid://bbs5kxcf70egm" path="res://sea.gd" id="9_4c57u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(94, 87)
@@ -79,8 +80,11 @@ texture = ExtResource("3_1bvp3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lquwl")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
-size = Vector2(3185.5, 164)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
+size = Vector2(3693, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(155, 116)
 
 [node name="Node" type="Node" unique_id=100327244]
 script = ExtResource("1_7mycd")
@@ -156,11 +160,16 @@ scale = Vector2(3, 3)
 position = Vector2(4024, 315)
 scale = Vector2(3, 3)
 
-[node name="killzone" parent="." unique_id=1200601263 instance=ExtResource("8_5vw27")]
-position = Vector2(344, 394)
+[node name="endzone" type="Area2D" parent="." unique_id=1286659689]
+script = ExtResource("8_kek77")
 
-[node name="CollisionShape2D" parent="killzone" index="0" unique_id=666475518]
-position = Vector2(2047.25, 69)
-shape = SubResource("RectangleShape2D_5vw27")
+[node name="sea" type="CollisionShape2D" parent="endzone" unique_id=1015031193]
+position = Vector2(2183.5, 414.5)
+shape = SubResource("RectangleShape2D_efxa6")
+script = ExtResource("9_4c57u")
 
-[editable path="killzone"]
+[node name="end" type="CollisionShape2D" parent="endzone" unique_id=725721679]
+position = Vector2(4194, 294)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[connection signal="body_entered" from="endzone" to="." method="_on_endzone_body_entered"]
