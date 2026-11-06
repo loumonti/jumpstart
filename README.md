@@ -1,3 +1,4 @@
+Hello !!! This was a quick project submitted for jumpstart-haven. It's an attempt at Godot made in like 2 days. I made it so its kinda like a turtle in a beach that can't touch the water and needs to collect coconuts to be happy. So according to this, basically the elements besides the preset game are the killzone and the picking up system. I really struggled lol. It's really really basic but its also my first solo Godot game so pleaaase bare with me. No AI was used, all human.
 <a id="readme-top"></a>
 
 <!-- SHIELDS -->
